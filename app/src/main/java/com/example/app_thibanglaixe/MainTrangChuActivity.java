@@ -2,6 +2,7 @@ package com.example.app_thibanglaixe;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,13 +14,20 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 public class MainTrangChuActivity extends AppCompatActivity {
-
+    CardView cardViewDeNgauNhien;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_trang_chu);
 
-
+        cardViewDeNgauNhien=findViewById(R.id.cardViewDeNgauNhien);
+        cardViewDeNgauNhien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainTrangChuActivity.this,TrangThiActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
