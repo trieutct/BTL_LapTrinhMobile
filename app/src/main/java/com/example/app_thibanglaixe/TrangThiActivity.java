@@ -11,8 +11,8 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 public class TrangThiActivity extends AppCompatActivity {
-    private int Phut = 1;
-    private int Giay = 5;
+    private int Phut = 20;
+    private int Giay = 59;
     private Timer quiziTimer;
     private Handler handler;
     private TextView txtThoiGianThi;
@@ -23,6 +23,10 @@ public class TrangThiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trang_thi);
         txtThoiGianThi = findViewById(R.id.txtThoiGianThi);
         settimer();
+
+
+
+        ///ok
     }
 
     private void settimer() {
@@ -40,7 +44,7 @@ public class TrangThiActivity extends AppCompatActivity {
                     });
                 } else if (Giay == 0) {
                     Phut--;
-                    Giay = 5;
+                    Giay = 59;
                 } else {
                     Giay--;
                 }
@@ -54,7 +58,6 @@ public class TrangThiActivity extends AppCompatActivity {
             }
         }, 0, 1000);
     }
-
     private void updateCountdown() {
         String finalMinutes = String.format("%02d", Phut);
         String finalSeconds = String.format("%02d", Giay);
