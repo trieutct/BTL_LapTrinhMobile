@@ -3,6 +3,8 @@ package com.example.app_thibanglaixe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
@@ -11,8 +13,8 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 public class TrangThiActivity extends AppCompatActivity {
-    private int Phut = 20;
-    private int Giay = 59;
+    private int Phut = 2;
+    private int Giay = 5;
     private Timer quiziTimer;
     private Handler handler;
     private TextView txtThoiGianThi;
@@ -42,7 +44,14 @@ public class TrangThiActivity extends AppCompatActivity {
                             Toast.makeText(TrangThiActivity.this, "Hết thời gian", Toast.LENGTH_SHORT).show();
                         }
                     });
-                } else if (Giay == 0) {
+                }
+                else if(Phut==2 && Giay==00)
+                {
+                    Phut--;
+                    Giay =59;
+                    txtThoiGianThi.setTextColor(Color.RED);
+                }
+                else if (Giay == 0) {
                     Phut--;
                     Giay = 59;
                 } else {
