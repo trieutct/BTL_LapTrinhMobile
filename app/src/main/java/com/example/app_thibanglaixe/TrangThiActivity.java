@@ -1,12 +1,16 @@
 package com.example.app_thibanglaixe;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +20,7 @@ public class TrangThiActivity extends AppCompatActivity {
     private int Phut = 2;
     private int Giay = 5;
     private Timer quiziTimer;
-    private Handler handler;
+    //private Handler handler;
     private TextView txtThoiGianThi;
 
     @Override
@@ -41,19 +45,25 @@ public class TrangThiActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(TrangThiActivity.this, "Hết thời gian", Toast.LENGTH_SHORT).show();
+                            View alertCustomDialog= LayoutInflater.from(TrangThiActivity.this).inflate(R.layout.waring_het_thoigian,null);
+                            AlertDialog.Builder alertDialog=new AlertDialog.Builder(TrangThiActivity.this);
+                            alertDialog.setView(alertCustomDialog);
+                            final AlertDialog dialog=alertDialog.create();
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            dialog.setCanceledOnTouchOutside(false);
+                            dialog.show();
                         }
                     });
                 }
                 else if(Phut==2 && Giay==00)
                 {
                     Phut--;
-                    Giay =59;
+                    Giay =5;
                     txtThoiGianThi.setTextColor(Color.RED);
                 }
                 else if (Giay == 0) {
                     Phut--;
-                    Giay = 59;
+                    Giay = 5;
                 } else {
                     Giay--;
                 }
