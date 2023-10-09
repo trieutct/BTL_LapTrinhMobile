@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 
 public class MainTrangChuActivity extends AppCompatActivity {
     CardView cardViewDeNgauNhien;
+    CardView cardThiTheoBoDe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +30,13 @@ public class MainTrangChuActivity extends AppCompatActivity {
             }
         });
 
+        cardThiTheoBoDe=findViewById(R.id.cardThiTheoBoDe);
+        cardThiTheoBoDe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainTrangChuActivity.this,DeThisActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

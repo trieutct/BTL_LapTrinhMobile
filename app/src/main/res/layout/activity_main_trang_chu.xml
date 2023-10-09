@@ -71,6 +71,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardThiTheoBoDe"
                 android:layout_width="160dp"
                 android:layout_height="100dp"
                 android:backgroundTint="#FA3E3E"

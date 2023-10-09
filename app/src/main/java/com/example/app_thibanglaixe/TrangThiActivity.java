@@ -22,7 +22,6 @@ public class TrangThiActivity extends AppCompatActivity {
     private Timer quiziTimer;
     //private Handler handler;
     private TextView txtThoiGianThi;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
