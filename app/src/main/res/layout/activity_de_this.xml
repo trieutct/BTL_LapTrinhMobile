@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".DeThisActivity">
     <LinearLayout
+        android:id="@+id/linerLayoutHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         android:background="#0B7AD3"
         app:layout_constraintTop_toTopOf="parent">
         <ImageView
@@ -30,4 +32,12 @@
             android:padding="20dp"
             />
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linerLayoutHeader" />
 </androidx.constraintlayout.widget.ConstraintLayout>
