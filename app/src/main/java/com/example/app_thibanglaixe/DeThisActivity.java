@@ -20,13 +20,13 @@ public class DeThisActivity extends AppCompatActivity {
         for(int i=0;i<4;i++)
         {
             HashMap<String,Object> hashMap=new HashMap<>();
-            hashMap.put("image",R.drawable.baseline_arrow_back_ios_24);
-            hashMap.put("text","Thu "+i);
-            hashMap.put("text1","text 1 "+i);
+            hashMap.put("image",R.drawable.trieu);
+            hashMap.put("Name","Trinh Cong Trieu "+i);
+            hashMap.put("NoiDung","Cho em đi học muộn "+i);
             list_item.add(hashMap);
         }
-        String[] from={"image","text","text1"};
-        int to[]={R.id.imageView,R.id.textView,R.id.textView1};
+        String[] from={"image","Name","NoiDung"};
+        int to[]={R.id.imageView,R.id.Name,R.id.NoiDung};
         SimpleAdapter simpleAdapter=new SimpleAdapter(this,list_item,R.layout.layout_listview_dethi,from,to);
         listView.setAdapter(simpleAdapter);
     }
