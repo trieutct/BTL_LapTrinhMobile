@@ -3,9 +3,9 @@ package com.example.app_thibanglaixe.Model;
 public class DeThiModel {
     int id;
     String TenDeThi;
-    String image;
+    int image;
 
-    public DeThiModel(int id, String tenDeThi, String image) {
+    public DeThiModel(int id, String tenDeThi, int image) {
         this.id = id;
         TenDeThi = tenDeThi;
         this.image = image;
@@ -27,11 +27,11 @@ public class DeThiModel {
         TenDeThi = tenDeThi;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }
