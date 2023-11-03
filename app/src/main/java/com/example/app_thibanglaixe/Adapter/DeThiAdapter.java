@@ -1,5 +1,6 @@
 package com.example.app_thibanglaixe.Adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,8 +30,13 @@ public class DeThiAdapter extends RecyclerView.Adapter<DeThiAdapter.ExamViewHold
     public void onBindViewHolder(@NonNull ExamViewHolder holder, int position) {
         DeThi exam = examList.get(position);
         holder.examNameTextView.setText(exam.getTenDeThi());
-    }
+        holder.examNameTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
+    }
     @Override
     public int getItemCount() {
         return examList.size();

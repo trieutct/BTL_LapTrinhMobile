@@ -1,8 +1,15 @@
 package com.example.app_thibanglaixe.SQLite;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.app_thibanglaixe.Model.DeThi;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "AppThiBangLaiXe.db";
@@ -42,8 +49,50 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DETHI);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CAUHOI);
+//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DETHI);
+//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CAUHOI);
         onCreate(db);
+    }
+    public void AddDeThi() {
+        deleteAllDeThi();
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_CAUHOI_MA_DETHI, "DT1");
+        values.put(COLUMN_DETHI_TEN,"Đề Thi 1");
+        database.insert(TABLE_DETHI, null, values);
+
+
+        values.put(COLUMN_CAUHOI_MA_DETHI, "DT2");
+        values.put(COLUMN_DETHI_TEN,"Đề Thi 2");
+        database.insert(TABLE_DETHI, null, values);
+
+
+        values.put(COLUMN_CAUHOI_MA_DETHI, "DT3");
+        values.put(COLUMN_DETHI_TEN,"Đề Thi 3");
+        database.insert(TABLE_DETHI, null, values);
+
+        values.put(COLUMN_CAUHOI_MA_DETHI, "DT4");
+        values.put(COLUMN_DETHI_TEN,"Đề Thi 4");
+        database.insert(TABLE_DETHI, null, values);
+        database.close();
+    }
+    public List<DeThi> getAllDeThi()
+    {
+        List<DeThi> deThiList=new ArrayList<>();
+        SQLiteDatabase db=this.getReadableDatabase();
+        String Query="SELECT * FROM "+TABLE_DETHI;
+        Cursor cursor=db.rawQuery(Query,null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                deThiList.add(new DeThi(1,cursor.getString(1),cursor.getString(2)));
+            }while (cursor.moveToNext());
+        }
+        return deThiList;
+    }
+    public void deleteAllDeThi() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_DETHI, null, null);
+        db.close();
     }
 }
