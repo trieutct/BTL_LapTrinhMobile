@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "AppThiBangLaiXe.db";
     private static final int DATABASE_VERSION = 1;
-
     public static final String TABLE_DETHI = "DeThi";
     public static final String TABLE_CAUHOI = "CauHoi";
 
@@ -33,7 +32,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             + COLUMN_CAUHOI_MA_DETHI + " TEXT,"
             + COLUMN_CAUHOI_NOI_DUNG + " TEXT,"
             + "FOREIGN KEY(" + COLUMN_CAUHOI_MA_DETHI + ") REFERENCES " + TABLE_DETHI + "(" + COLUMN_DETHI_MA + "))";
-
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

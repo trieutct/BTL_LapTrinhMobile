@@ -9,6 +9,12 @@ public class DeThi {
         // Mặc định constructor
     }
 
+    public DeThi(long id, String maDeThi, String tenDeThi) {
+        this.id = id;
+        this.maDeThi = maDeThi;
+        this.tenDeThi = tenDeThi;
+    }
+
     public DeThi(String maDeThi, String tenDeThi) {
         this.maDeThi = maDeThi;
         this.tenDeThi = tenDeThi;

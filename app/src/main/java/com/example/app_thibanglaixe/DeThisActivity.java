@@ -1,46 +1,31 @@
 package com.example.app_thibanglaixe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
-import com.example.app_thibanglaixe.Adapter.MyApdapter;
-import com.example.app_thibanglaixe.Model.DeThiModel;
+import com.example.app_thibanglaixe.Adapter.DeThiAdapter;
+import com.example.app_thibanglaixe.Model.DeThi;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class DeThisActivity extends AppCompatActivity {
-    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_de_this);
-        listView=findViewById(R.id.listView);
-//        ArrayList<HashMap<String, Object>> list_item=new ArrayList<>();
-//        for(int i=0;i<4;i++)
-//        {
-//            HashMap<String,Object> hashMap=new HashMap<>();
-//            hashMap.put("image",R.drawable.trieu);
-//            hashMap.put("Name","Trinh Cong Trieu "+i);
-//            hashMap.put("NoiDung","Cho em đi học muộn "+i);
-//            list_item.add(hashMap);
-//        }
-//        String[] from={"image","Name","NoiDung"};
-//        int to[]={R.id.imageView,R.id.Name,R.id.NoiDung};
-//        SimpleAdapter simpleAdapter=new SimpleAdapter(this,list_item,R.layout.layout_listview_dethi,from,to);
-//        listView.setAdapter(simpleAdapter);
-
-
-        ArrayList<DeThiModel> list = new ArrayList<>();
-
-        list.add(new DeThiModel(1,"Trịnh Công Triệu",R.drawable.trieu));
-        list.add(new DeThiModel(2,"Phạm Khắc Huy",R.drawable.trieu));
-        list.add(new DeThiModel(3,"Phạm Khắc Huy",R.drawable.trieu));
-        list.add(new DeThiModel(4,"Phạm Khắc Huy",R.drawable.trieu));
-        MyApdapter adapter=new MyApdapter(this,list);
-        listView.setAdapter(adapter);
+        RecyclerView examRecyclerView = findViewById(R.id.examRecyclerView);
+        ArrayList<DeThi> examList = new ArrayList<>();
+        examList.add(new DeThi(1,"MD1","Đề Thi 1"));
+        examList.add(new DeThi(2,"MD2","Đề Thi 2"));
+        examList.add(new DeThi(3,"MD3","Đề Thi 3"));
+        examList.add(new DeThi(4,"MD4","Đề Thi 4"));
+        DeThiAdapter adapter = new DeThiAdapter(examList);
+        examRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        examRecyclerView.setAdapter(adapter);
     }
 }
