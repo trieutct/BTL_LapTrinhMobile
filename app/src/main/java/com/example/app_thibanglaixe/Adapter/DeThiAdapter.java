@@ -1,5 +1,6 @@
 package com.example.app_thibanglaixe.Adapter;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_thibanglaixe.Model.DeThi;
 import com.example.app_thibanglaixe.R;
+import com.example.app_thibanglaixe.TrangThiActivity;
 
 import java.util.List;
 public class DeThiAdapter extends RecyclerView.Adapter<DeThiAdapter.ExamViewHolder> {
@@ -34,7 +36,10 @@ public class DeThiAdapter extends RecyclerView.Adapter<DeThiAdapter.ExamViewHold
         holder.examNameTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), exam.getTenDeThi(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(view.getContext(), exam.getTenDeThi(), Toast.LENGTH_SHORT).show();
+                Intent itent=new Intent(view.getContext(), TrangThiActivity.class);
+                itent.putExtra("MaDeThi",exam.getMaDeThi());
+                view.getContext().startActivity(itent);
             }
         });
     }

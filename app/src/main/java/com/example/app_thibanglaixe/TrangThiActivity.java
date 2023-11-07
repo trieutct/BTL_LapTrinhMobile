@@ -18,10 +18,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 public class TrangThiActivity extends AppCompatActivity {
     private int Phut = 2;
-    private int Giay = 5;
+    private int Giay = 60;
     private Timer quiziTimer;
     //private Handler handler;
     private TextView txtThoiGianThi;
+    private String MaDeThi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +31,8 @@ public class TrangThiActivity extends AppCompatActivity {
         settimer();
 
 
-
-        ///ok
+        MaDeThi=getIntent().getStringExtra("MaDeThi");
+        Toast.makeText(this, MaDeThi, Toast.LENGTH_SHORT).show();
     }
 
     private void settimer() {
@@ -54,19 +55,18 @@ public class TrangThiActivity extends AppCompatActivity {
                         }
                     });
                 }
-                else if(Phut==2 && Giay==00)
+                else if(Phut==2 && Giay==0)
                 {
                     Phut--;
-                    Giay =5;
+                    Giay =59;
                     txtThoiGianThi.setTextColor(Color.RED);
                 }
                 else if (Giay == 0) {
                     Phut--;
-                    Giay = 5;
+                    Giay = 59;
                 } else {
                     Giay--;
                 }
-
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -81,7 +81,6 @@ public class TrangThiActivity extends AppCompatActivity {
         String finalSeconds = String.format("%02d", Giay);
         txtThoiGianThi.setText(finalMinutes + ":" + finalSeconds);
     }
-
     private void cancelTimer() {
         if (quiziTimer != null) {
             quiziTimer.cancel();
