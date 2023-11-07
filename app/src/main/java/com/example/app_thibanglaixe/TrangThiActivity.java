@@ -2,6 +2,7 @@ package com.example.app_thibanglaixe;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,24 +18,39 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 public class TrangThiActivity extends AppCompatActivity {
-    private int Phut = 2;
+    private int Phut = 19;
     private int Giay = 60;
     private Timer quiziTimer;
     //private Handler handler;
     private TextView txtThoiGianThi;
-    private String MaDeThi;
+    private String MaDeThi,TenDeThi;
+    private TextView tvDeThi;
+    private AppCompatButton option1,option2,option3,option4;
+    private AppCompatButton nextBtn;
+    private TextView NoiDungCauHoi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_thi);
         txtThoiGianThi = findViewById(R.id.txtThoiGianThi);
         settimer();
-
-
+        getId();
         MaDeThi=getIntent().getStringExtra("MaDeThi");
-        Toast.makeText(this, MaDeThi, Toast.LENGTH_SHORT).show();
+        TenDeThi=getIntent().getStringExtra("TenDeThi");
+        tvDeThi.setText(TenDeThi);
+        //Toast.makeText(this, MaDeThi, Toast.LENGTH_SHORT).show();
     }
+    private void getId()
+    {
+        tvDeThi=findViewById(R.id.TenDeThi);
+        option1=findViewById(R.id.option1);
+        option2=findViewById(R.id.option2);
+        option3=findViewById(R.id.option3);
+        option4=findViewById(R.id.option4);
 
+        nextBtn=findViewById(R.id.nextBtn);
+        NoiDungCauHoi=findViewById(R.id.questionContent);
+    }
     private void settimer() {
         quiziTimer = new Timer();
         quiziTimer.scheduleAtFixedRate(new TimerTask() {

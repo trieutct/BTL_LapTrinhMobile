@@ -15,23 +15,29 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "AppThiBangLaiXe.db";
     private static final int DATABASE_VERSION = 1;
     public static final String TABLE_DETHI = "DeThi";
-    public static final String TABLE_CAUHOI = "CauHoi";
+    public static final String TABLE_CAUHOI = "Question";
 
     // Các trường cơ sở dữ liệu cho bảng DeThi
     public static final String COLUMN_DETHI_ID = "id";
     public static final String COLUMN_DETHI_MA = "maDeThi";
     public static final String COLUMN_DETHI_TEN = "tenDeThi";
 
-    // Các trường cơ sở dữ liệu cho bảng CauHoi
-    public static final String COLUMN_CAUHOI_ID = "id";
-    public static final String COLUMN_CAUHOI_MA_DETHI = "maDeThi";
-    public static final String COLUMN_CAUHOI_NOI_DUNG = "noiDungCauHoi";
+
 
     // Câu lệnh SQL để tạo bảng DeThi
     private static final String CREATE_TABLE_DETHI = "CREATE TABLE " + TABLE_DETHI + " ("
             + COLUMN_DETHI_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_DETHI_MA + " TEXT,"
             + COLUMN_DETHI_TEN + " TEXT)";
+
+    // Các trường cơ sở dữ liệu cho bảng CauHoi
+    public static final String COLUMN_CAUHOI_ID = "Id";
+    public static final String COLUMN_CAUHOI_MA_DETHI = "MaDeThi";
+    public static final String COLUMN_CAUHOI_NOI_DUNG = "NoiDungCauHoi";
+    public static final String COLUMN_OPTION1 = "Option1";
+    public static final String COLUMN_OPTION2 = "Option2";
+    public static final String COLUMN_OPTION3 = "Option3";
+    public static final String COLUMN_OPTION4 = "Option4";
 
     // Câu lệnh SQL để tạo bảng CauHoi với khóa ngoại
     private static final String CREATE_TABLE_CAUHOI = "CREATE TABLE " + TABLE_CAUHOI + " ("

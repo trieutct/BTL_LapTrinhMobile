@@ -39,6 +39,7 @@ public class DeThiAdapter extends RecyclerView.Adapter<DeThiAdapter.ExamViewHold
 //                Toast.makeText(view.getContext(), exam.getTenDeThi(), Toast.LENGTH_SHORT).show();
                 Intent itent=new Intent(view.getContext(), TrangThiActivity.class);
                 itent.putExtra("MaDeThi",exam.getMaDeThi());
+                itent.putExtra("TenDeThi",exam.getTenDeThi());
                 view.getContext().startActivity(itent);
             }
         });
