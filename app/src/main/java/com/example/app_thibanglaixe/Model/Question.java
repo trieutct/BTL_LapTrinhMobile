@@ -4,7 +4,6 @@ public class Question {
     private long id;
     private String maDeThi;
     private String noiDungCauHoi;
-
     public Question() {
     }
 
