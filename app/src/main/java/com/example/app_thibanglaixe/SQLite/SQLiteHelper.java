@@ -5,14 +5,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.app_thibanglaixe.Model.DeThi;
+import com.example.app_thibanglaixe.Model.Question;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "AppThiBangLaiXe.db";
+    private static final String DATABASE_NAME = "AppThiBangLaiXe1.db";
     private static final int DATABASE_VERSION = 1;
     public static final String TABLE_DETHI = "DeThi";
     public static final String TABLE_CAUHOI = "Question";
@@ -38,13 +40,25 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_OPTION2 = "Option2";
     public static final String COLUMN_OPTION3 = "Option3";
     public static final String COLUMN_OPTION4 = "Option4";
+    public static final String COLUMN_UserSelectedAnswer = "UserSelectedAnswer";
+    public static final String COLUMN_Answer = "Answer";
 
     // Câu lệnh SQL để tạo bảng CauHoi với khóa ngoại
+//    private static final String CREATE_TABLE_CAUHOI = "CREATE TABLE " + TABLE_CAUHOI + " ("
+//            + COLUMN_CAUHOI_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+//            + COLUMN_CAUHOI_MA_DETHI + " TEXT,"
+//            + COLUMN_CAUHOI_NOI_DUNG + " TEXT,"
+//            + "FOREIGN KEY(" + COLUMN_CAUHOI_MA_DETHI + ") REFERENCES " + TABLE_DETHI + "(" + COLUMN_DETHI_MA + "))";
     private static final String CREATE_TABLE_CAUHOI = "CREATE TABLE " + TABLE_CAUHOI + " ("
             + COLUMN_CAUHOI_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_CAUHOI_MA_DETHI + " TEXT,"
             + COLUMN_CAUHOI_NOI_DUNG + " TEXT,"
-            + "FOREIGN KEY(" + COLUMN_CAUHOI_MA_DETHI + ") REFERENCES " + TABLE_DETHI + "(" + COLUMN_DETHI_MA + "))";
+            + COLUMN_OPTION1 + " TEXT,"
+            + COLUMN_OPTION2 + " TEXT,"
+            + COLUMN_OPTION3 + " TEXT,"
+            + COLUMN_OPTION4 + " TEXT,"
+            + COLUMN_UserSelectedAnswer + " TEXT,"
+            + COLUMN_Answer + " TEXT)";
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -58,6 +72,41 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 //        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DETHI);
 //        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CAUHOI);
         onCreate(db);
+    }
+    public void AddQuestion()
+    {
+        deleteQuestion();
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_CAUHOI_MA_DETHI, "DT1");
+        values.put(COLUMN_CAUHOI_NOI_DUNG,"Câu hỏi 1 đề 1");
+        values.put(COLUMN_OPTION1,"Option1");
+        values.put(COLUMN_OPTION2,"Option2");
+        values.put(COLUMN_OPTION3,"Option3");
+        values.put(COLUMN_OPTION4,"Option4");
+        values.put(COLUMN_UserSelectedAnswer,"Option4");
+        values.put(COLUMN_Answer,"Option4");
+        database.insert(TABLE_CAUHOI, null, values);
+    }
+    public List<Question> getAllQuestion()
+    {
+        List<Question> questionList=new ArrayList<>();
+        SQLiteDatabase db=this.getReadableDatabase();
+        String Query="SELECT * FROM "+TABLE_CAUHOI;
+        Cursor cursor=db.rawQuery(Query,null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                questionList.add(new Question(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5),cursor.getString(6),cursor.getString(7),cursor.getString(8)));
+            }while (cursor.moveToNext());
+        }
+        return questionList;
+    }
+    public void deleteQuestion()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_CAUHOI, null, null);
+        db.close();
     }
     public void AddDeThi() {
         deleteAllDeThi();
