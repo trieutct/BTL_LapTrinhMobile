@@ -33,11 +33,11 @@ public class DeThisActivity extends AppCompatActivity {
         examRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
         examRecyclerView.setAdapter(adapter);
         sqLiteHelper.AddQuestion();
-        questionList=sqLiteHelper.getAllQuestion();
-        for (Question question : questionList) {
-            Log.d("QuestionInfo", "ID: " + question.getMaDeThi());
-            Log.d("QuestionInfo", "MaDeThi: " + question.getUserSelectedAnswer());
-            Log.d("QuestionInfo", "NoiDungCauHoi: " + question.getNoiDungCauHoi());
-        }
+//        questionList=sqLiteHelper.getAllQuestion();
+//        for (Question question : questionList) {
+//            Log.d("QuestionInfo", "ID: " + question.getMaDeThi());
+//            Log.d("QuestionInfo", "MaDeThi: " + question.getUserSelectedAnswer());
+//            Log.d("QuestionInfo", "NoiDungCauHoi: " + question.getNoiDungCauHoi());
+//        }
     }
 }
