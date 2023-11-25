@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class TrangThiActivity extends AppCompatActivity {
     private TextView tvDeThi;
     private TextView Questions;
     private AppCompatButton option1,option2,option3,option4;
+    private ImageView Image;
     private AppCompatButton nextBtn;
     private TextView NoiDungCauHoi;
     private List<Question> questionList;
@@ -58,6 +60,161 @@ public class TrangThiActivity extends AppCompatActivity {
        // option4.setVisibility(View.GONE);
 
         Questions.setText(CauHienTai+1+"/"+questionList.size());
+        NoiDungCauHoi.setText(questionList.get(0).getNoiDungCauHoi());
+        option1.setText(questionList.get(0).getOption1());
+        option2.setText(questionList.get(0).getOption2());
+        option3.setText(questionList.get(0).getOption3());
+        if(questionList.get(0).getOption4().isEmpty())
+        {
+            option4.setVisibility(View.GONE);
+        }
+        else
+        {
+            option4.setVisibility(View.VISIBLE);
+            option4.setText(questionList.get(0).getOption4());
+        }
+        option1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(UserSelected.isEmpty())
+                {
+                    UserSelected=option1.getText().toString();
+                    option1.setBackgroundResource(R.drawable.round_back_red10);
+                    option1.setTextColor(Color.WHITE);
+
+                    revalAnswer();
+
+                    questionList.get(CauHienTai).setUserSelectedAnswer(UserSelected);
+                }
+            }
+        });
+        option2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(UserSelected.isEmpty())
+                {
+                    UserSelected=option2.getText().toString();
+                    option2.setBackgroundResource(R.drawable.round_back_red10);
+                    option2.setTextColor(Color.WHITE);
+
+                    revalAnswer();
+
+                    questionList.get(CauHienTai).setUserSelectedAnswer(UserSelected);
+                }
+            }
+        });
+        option3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(UserSelected.isEmpty())
+                {
+                    UserSelected=option3.getText().toString();
+                    option3.setBackgroundResource(R.drawable.round_back_red10);
+                    option3.setTextColor(Color.WHITE);
+
+                    revalAnswer();
+
+                    questionList.get(CauHienTai).setUserSelectedAnswer(UserSelected);
+                }
+            }
+        });
+        option4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(UserSelected.isEmpty())
+                {
+                    UserSelected=option4.getText().toString();
+                    option4.setBackgroundResource(R.drawable.round_back_red10);
+                    option4.setTextColor(Color.WHITE);
+
+                    revalAnswer();
+
+                    questionList.get(CauHienTai).setUserSelectedAnswer(UserSelected);
+                }
+            }
+        });
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(UserSelected.isEmpty())
+                {
+                    Toast.makeText(TrangThiActivity.this,"Bạn chưa chọn đáp án",Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    changNextQuestion();
+                }
+            }
+        });
+    }
+    private void changNextQuestion()
+    {
+        CauHienTai++;
+        if(CauHienTai+1==questionList.size())
+        {
+            nextBtn.setText("Nộp bài");
+        }
+        if(CauHienTai<questionList.size())
+        {
+            UserSelected="";
+            option1.setBackgroundResource(R.drawable.round_back_options);
+            option1.setTextColor(Color.parseColor("#1F6B88"));
+
+            option2.setBackgroundResource(R.drawable.round_back_options);
+            option2.setTextColor(Color.parseColor("#1F6BB8"));
+
+            option3.setBackgroundResource(R.drawable.round_back_options);
+            option3.setTextColor(Color.parseColor("#1F6BB8"));
+
+            option4.setBackgroundResource(R.drawable.round_back_options);
+            option4.setTextColor(Color.parseColor("#1F6BB8"));
+
+
+            Questions.setText(CauHienTai+1+"/"+questionList.size());
+            NoiDungCauHoi.setText(questionList.get(CauHienTai).getNoiDungCauHoi());
+            option1.setText(questionList.get(CauHienTai).getOption1());
+            option2.setText(questionList.get(CauHienTai).getOption2());
+            option3.setText(questionList.get(CauHienTai).getOption3());
+            if(questionList.get(CauHienTai).getOption4().isEmpty())
+            {
+                option4.setVisibility(View.GONE);
+                Image.setVisibility(View.GONE);
+            }
+            else
+            {
+                option4.setVisibility(View.VISIBLE);
+                Image.setVisibility(View.VISIBLE);
+                option4.setText(questionList.get(CauHienTai).getOption4());
+            }
+        }
+        else
+        {
+            Toast.makeText(TrangThiActivity.this,"hết câu hỏi",Toast.LENGTH_LONG).show();
+        }
+    }
+    private void revalAnswer()
+    {
+        final String getAnswer=questionList.get(CauHienTai).getAnswer();
+        if(option1.getText().toString().equals(getAnswer))
+        {
+            option1.setBackgroundResource(R.drawable.round_back_green10);
+            option1.setTextColor(Color.WHITE);
+        }
+        else if(option2.getText().toString().equals(getAnswer))
+        {
+            option2.setBackgroundResource(R.drawable.round_back_green10);
+            option2.setTextColor(Color.WHITE);
+        }
+        else if(option3.getText().toString().equals(getAnswer))
+        {
+            option3.setBackgroundResource(R.drawable.round_back_green10);
+            option3.setTextColor(Color.WHITE);
+        }
+        else if(option4.getText().toString().equals(getAnswer))
+        {
+            option4.setBackgroundResource(R.drawable.round_back_green10);
+            option4.setTextColor(Color.WHITE);
+        }
     }
     private void getId()
     {
@@ -71,6 +228,7 @@ public class TrangThiActivity extends AppCompatActivity {
         NoiDungCauHoi=findViewById(R.id.questionContent);
 
         Questions=findViewById(R.id.questions);
+        Image=findViewById(R.id.image);
     }
     private void settimer() {
         quiziTimer = new Timer();

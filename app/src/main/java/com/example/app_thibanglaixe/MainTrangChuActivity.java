@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import java.util.Random;
+
 public class MainTrangChuActivity extends AppCompatActivity {
     CardView cardViewDeNgauNhien;
     CardView cardThiTheoBoDe;
@@ -26,6 +28,10 @@ public class MainTrangChuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainTrangChuActivity.this,TrangThiActivity.class);
+                Random random = new Random();
+                int randomNumber = random.nextInt(4) + 1;
+                intent.putExtra("MaDeThi","DT"+randomNumber);
+                intent.putExtra("TenDeThi","Đề thi số "+randomNumber);
                 startActivity(intent);
             }
         });

@@ -25,7 +25,6 @@ public class DeThisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_de_this);
         RecyclerView examRecyclerView = findViewById(R.id.examRecyclerView);
-
         SQLiteHelper sqLiteHelper=new SQLiteHelper(DeThisActivity.this);
         sqLiteHelper.AddDeThi();
         deThiList=sqLiteHelper.getAllDeThi();

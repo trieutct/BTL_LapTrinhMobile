@@ -101,7 +101,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         AddCauhoi("DT1","Người lái xe được hiểu như thế nào trong các khái niệm dưới đây?","Là người điều khiển xe cơ giới.","Là người điều khiển xe thô sơ.","Là người điều khiển xe có súc vật kéo.","","","Là người điều khiển xe cơ giới.");
         AddCauhoi("DT1","Đường mà trên đó phương tiện tham gia giao thông được các phương tiện giao thông đến từ các hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên là loại đường gì?","Đường không ưu tiên","Đường tỉnh lộ.","Đường quốc lộ.","Đường ưu tiên.","","Đường ưu tiên.");
         AddCauhoi("DT1","“Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.");
-        AddCauhoi("DT1","","","","","","","");
+        //AddCauhoi("DT1","","","","","","","");
     }
     public List<Question> getAllQuestionByMaDeThi(String MaDeThi) {
         List<Question> questionList = new ArrayList<>();
