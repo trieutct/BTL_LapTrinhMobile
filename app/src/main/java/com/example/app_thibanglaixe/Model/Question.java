@@ -5,10 +5,18 @@ public class Question {
     private String NoiDungCauHoi;
     private String Option1,Option2,Option3,Option4;
     private String UserSelectedAnswer,Answer;
+    private String LinkAnh;
     public Question() {
     }
+    public String getLinkAnh() {
+        return LinkAnh;
+    }
 
-    public Question(String maDeThi, String noiDungCauHoi, String option1, String option2, String option3, String option4, String userSelectedAnswer, String answer) {
+    public void setLinkAnh(String linkAnh) {
+        LinkAnh = linkAnh;
+    }
+
+    public Question(String maDeThi, String noiDungCauHoi, String option1, String option2, String option3, String option4, String userSelectedAnswer, String answer, String urlanh) {
         MaDeThi = maDeThi;
         NoiDungCauHoi = noiDungCauHoi;
         Option1 = option1;
@@ -17,6 +25,7 @@ public class Question {
         Option4 = option4;
         UserSelectedAnswer = userSelectedAnswer;
         Answer = answer;
+        LinkAnh=urlanh;
     }
 
     public String getMaDeThi() {

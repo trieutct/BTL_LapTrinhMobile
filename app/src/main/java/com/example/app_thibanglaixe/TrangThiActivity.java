@@ -49,7 +49,6 @@ public class TrangThiActivity extends AppCompatActivity {
         MaDeThi=getIntent().getStringExtra("MaDeThi");
         TenDeThi=getIntent().getStringExtra("TenDeThi");
         tvDeThi.setText(TenDeThi);
-        Toast.makeText(this, MaDeThi, Toast.LENGTH_SHORT).show();
         SQLiteHelper sqLiteHelper=new SQLiteHelper(TrangThiActivity.this);
         questionList=sqLiteHelper.getAllQuestionByMaDeThi(MaDeThi);
 //        for (Question question : questionList) {
@@ -73,6 +72,16 @@ public class TrangThiActivity extends AppCompatActivity {
             option4.setVisibility(View.VISIBLE);
             option4.setText(questionList.get(0).getOption4());
         }
+        if(questionList.get(0).getLinkAnh().isEmpty())
+        {
+            Image.setVisibility(View.GONE);
+        }
+        else
+        {
+            Image.setVisibility(View.VISIBLE);
+            int Idimage=getResourceId(questionList.get(0).getLinkAnh(),"drawable", getPackageName());
+            Image.setImageResource(Idimage);
+        }
         option1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,9 +90,7 @@ public class TrangThiActivity extends AppCompatActivity {
                     UserSelected=option1.getText().toString();
                     option1.setBackgroundResource(R.drawable.round_back_red10);
                     option1.setTextColor(Color.WHITE);
-
                     revalAnswer();
-
                     questionList.get(CauHienTai).setUserSelectedAnswer(UserSelected);
                 }
             }
@@ -147,6 +154,15 @@ public class TrangThiActivity extends AppCompatActivity {
             }
         });
     }
+    public int getResourceId(String pVariableName, String pResourcename, String pPackageName)
+    {
+        try {
+            return getResources().getIdentifier(pVariableName, pResourcename, pPackageName);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
     private void changNextQuestion()
     {
         CauHienTai++;
@@ -178,13 +194,21 @@ public class TrangThiActivity extends AppCompatActivity {
             if(questionList.get(CauHienTai).getOption4().isEmpty())
             {
                 option4.setVisibility(View.GONE);
-                Image.setVisibility(View.GONE);
             }
             else
             {
                 option4.setVisibility(View.VISIBLE);
-                Image.setVisibility(View.VISIBLE);
                 option4.setText(questionList.get(CauHienTai).getOption4());
+            }
+            if(questionList.get(CauHienTai).getLinkAnh().isEmpty())
+            {
+                Image.setVisibility(View.GONE);
+            }
+            else
+            {
+                Image.setVisibility(View.VISIBLE);
+                int Idimage=getResourceId(questionList.get(CauHienTai).getLinkAnh(),"drawable", getPackageName());
+                Image.setImageResource(Idimage);
             }
         }
         else
