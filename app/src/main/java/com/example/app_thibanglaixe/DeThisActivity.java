@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DeThisActivity extends AppCompatActivity {
     List<DeThi> deThiList;
-    List<Question> questionList;
+    //List<Question> questionList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

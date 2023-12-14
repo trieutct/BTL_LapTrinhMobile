@@ -13,6 +13,12 @@
         android:theme="@style/Theme.App_ThiBangLaiXe"
         tools:targetApi="31">
         <activity
+            android:name=".KetQuaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_ketqua"
+            android:exported="false" />
+        <activity
             android:name=".DeThisActivity"
             android:exported="false" />
         <activity

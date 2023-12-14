@@ -21,6 +21,7 @@ import com.example.app_thibanglaixe.Model.Question;
 import com.example.app_thibanglaixe.SQLite.SQLiteHelper;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 public class TrangThiActivity extends AppCompatActivity {
@@ -48,6 +49,8 @@ public class TrangThiActivity extends AppCompatActivity {
         getId();
         MaDeThi=getIntent().getStringExtra("MaDeThi");
         TenDeThi=getIntent().getStringExtra("TenDeThi");
+//        Log.d("QuestionInfo", MaDeThi);
+//        Log.d("QuestionInfo", TenDeThi);
         tvDeThi.setText(TenDeThi);
         SQLiteHelper sqLiteHelper=new SQLiteHelper(TrangThiActivity.this);
         questionList=sqLiteHelper.getAllQuestionByMaDeThi(MaDeThi);
@@ -213,7 +216,8 @@ public class TrangThiActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(TrangThiActivity.this,"hết câu hỏi",Toast.LENGTH_LONG).show();
+            Intent intent=new Intent(TrangThiActivity.this,KetQuaActivity.class);
+            startActivity(intent);
         }
     }
     private void revalAnswer()
