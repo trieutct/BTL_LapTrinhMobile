@@ -102,45 +102,96 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     {
         AddCauhoi("DT1","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì?","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","s","Phần đường xe chạy.","");
         AddCauhoi("DT1","“Làn đường” là gì?","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, sử dụng cho xe chạy.","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","Là đường cho xe ô tô chạy, dừng, đỗ an toàn.","","","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","");
-        AddCauhoi("DT1","Trong các khái niệm dưới đây, “dải phân cách” được hiểu như thế nào là đúng?","Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép.","Là bộ phận của đường để phân tách phần đường xe chạy và hành lang an toàn giao thông.","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","","","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","");
+        AddCauhoi("DT1","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","","Phần đường xe chạy.","");
         AddCauhoi("DT1","“Dải phân cách” trên đường bộ gồm những loại nào?","Dải phân cách gồm loại cố định và loại di động.","Dải phân cách gồm tường chống ồn, hộ lan cứng và hộ lan mềm.","Dải phân cách gồm giá long môn và biển báo hiệu đường bộ.","","","Dải phân cách gồm loại cố định và loại di động.","");
         AddCauhoi("DT1","Biển báo hiệu có dạng hình tròn, viền đỏ, nền trắng, trên nền có hình vẽ hoặc chữ số, chữ viết màu đen là loại biển gì dưới đây?","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh.","Biển báo chỉ dẫn.","","Biển báo cấm.","bien_1");
+        AddCauhoi("DT1","Biển báo hiệu hình tròn có nền xanh lam có hình vẽ màu trắng là loại biển gì dưới đây","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh phải thi hành.","Biển báo chỉ dẫn.","","Biển báo hiệu lệnh phải thi hành.","img");
+        AddCauhoi("DT1","Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
         AddCauhoi("DT1","Người lái xe được hiểu như thế nào trong các khái niệm dưới đây?","Là người điều khiển xe cơ giới.","Là người điều khiển xe thô sơ.","Là người điều khiển xe có súc vật kéo.","","","Là người điều khiển xe cơ giới.","");
+        AddCauhoi("DT1","Biển nào dưới đây các phương tiện không được phép đi vào?","Biển 1.","Biển 2.","Biển 1 và 2.","","","Biển 1 và 2.","img_2");
         AddCauhoi("DT1","Đường mà trên đó phương tiện tham gia giao thông được các phương tiện giao thông đến từ các hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên là loại đường gì?","Đường không ưu tiên","Đường tỉnh lộ.","Đường quốc lộ.","Đường ưu tiên.","","Đường ưu tiên.","");
         AddCauhoi("DT1","“Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
+        AddCauhoi("DT1","Biển nào cấm xe rẽ trái?","Biển 1.","Biển 2.","Cả hai biển.","","","Biển 1.","img_1");
+        AddCauhoi("DT1","Biển nào xe mô tô hai bánh không được đi vào?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_3");
+        AddCauhoi("DT1","Biển nào báo hiệu nguy hiểm giao nhau với đường sắt?","Biển 1 và 2.","Biển 1 và 3.","Biển 2 và 3.","Cả ba biển.","","Biển 1 và 3.","img_4");
+        AddCauhoi("DT1","Biển nào báo hiệu “Đường giao nhau” của các tuyến đường cùng cấp?","Biển 1.","Biển 2.","Biển 3.","","","Biển 1.","img_5");
+        AddCauhoi("DT1","Biển nào chỉ dẫn nơi bắt đầu đoạn đường dành cho người đi bộ?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_6");
+        AddCauhoi("DT1","Biển nào dưới đây báo hiệu hết cấm vượt?","Biển 1.","Biển 2.","Biển 3.","Biển 2 và 3.","","Biển 2 và 3.","img_7");
+        AddCauhoi("DT1","Vạch kẻ đường nào dưới đây là vạch phân chia hai chiều xe chạy (vạch tim đường), xe không được lấn làn, không được đè lên vạch?","Vạch 1.","Vạch 2.","Vạch 3.","Cả 3 vạch.","","Vạch 2.","img_8");
+        AddCauhoi("DT1","Xe nào được quyền đi trước trong trường hợp này?","Mô tô.","Xe cứu thương.","","","","","img_9");
+        AddCauhoi("DT1","Xe tải kéo mô tô ba bánh như hình này có đúng quy tắc giao thông không?","Đúng.","Không đúng.","","","","Không đúng.","img_10");
     }
     private void AddCauHoiDeThi2()
     {
         AddCauhoi("DT2","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì?","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","s","Phần đường xe chạy.","");
         AddCauhoi("DT2","“Làn đường” là gì?","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, sử dụng cho xe chạy.","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","Là đường cho xe ô tô chạy, dừng, đỗ an toàn.","","","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","");
         AddCauhoi("DT2","Trong các khái niệm dưới đây, “dải phân cách” được hiểu như thế nào là đúng?","Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép.","Là bộ phận của đường để phân tách phần đường xe chạy và hành lang an toàn giao thông.","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","","","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","");
+        AddCauhoi("DT2","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","","Phần đường xe chạy.","");
         AddCauhoi("DT2","“Dải phân cách” trên đường bộ gồm những loại nào?","Dải phân cách gồm loại cố định và loại di động.","Dải phân cách gồm tường chống ồn, hộ lan cứng và hộ lan mềm.","Dải phân cách gồm giá long môn và biển báo hiệu đường bộ.","","","Dải phân cách gồm loại cố định và loại di động.","");
         AddCauhoi("DT2","Biển báo hiệu có dạng hình tròn, viền đỏ, nền trắng, trên nền có hình vẽ hoặc chữ số, chữ viết màu đen là loại biển gì dưới đây?","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh.","Biển báo chỉ dẫn.","","Biển báo cấm.","bien_1");
+        AddCauhoi("DT2","Biển báo hiệu hình tròn có nền xanh lam có hình vẽ màu trắng là loại biển gì dưới đây","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh phải thi hành.","Biển báo chỉ dẫn.","","Biển báo hiệu lệnh phải thi hành.","img");
+        AddCauhoi("DT2","Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
         AddCauhoi("DT2","Người lái xe được hiểu như thế nào trong các khái niệm dưới đây?","Là người điều khiển xe cơ giới.","Là người điều khiển xe thô sơ.","Là người điều khiển xe có súc vật kéo.","","","Là người điều khiển xe cơ giới.","");
+        AddCauhoi("DT2","Biển nào dưới đây các phương tiện không được phép đi vào?","Biển 1.","Biển 2.","Biển 1 và 2.","","","Biển 1 và 2.","img_2");
         AddCauhoi("DT2","Đường mà trên đó phương tiện tham gia giao thông được các phương tiện giao thông đến từ các hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên là loại đường gì?","Đường không ưu tiên","Đường tỉnh lộ.","Đường quốc lộ.","Đường ưu tiên.","","Đường ưu tiên.","");
         AddCauhoi("DT2","“Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
+        AddCauhoi("DT2","Biển nào cấm xe rẽ trái?","Biển 1.","Biển 2.","Cả hai biển.","","","Biển 1.","img_1");
+        AddCauhoi("DT2","Biển nào xe mô tô hai bánh không được đi vào?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_3");
+        AddCauhoi("DT2","Biển nào báo hiệu nguy hiểm giao nhau với đường sắt?","Biển 1 và 2.","Biển 1 và 3.","Biển 2 và 3.","Cả ba biển.","","Biển 1 và 3.","img_4");
+        AddCauhoi("DT2","Biển nào báo hiệu “Đường giao nhau” của các tuyến đường cùng cấp?","Biển 1.","Biển 2.","Biển 3.","","","Biển 1.","img_5");
+        AddCauhoi("DT2","Biển nào chỉ dẫn nơi bắt đầu đoạn đường dành cho người đi bộ?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_6");
+        AddCauhoi("DT2","Biển nào dưới đây báo hiệu hết cấm vượt?","Biển 1.","Biển 2.","Biển 3.","Biển 2 và 3.","","Biển 2 và 3.","img_7");
+        AddCauhoi("DT2","Vạch kẻ đường nào dưới đây là vạch phân chia hai chiều xe chạy (vạch tim đường), xe không được lấn làn, không được đè lên vạch?","Vạch 1.","Vạch 2.","Vạch 3.","Cả 3 vạch.","","Vạch 2.","img_8");
+        AddCauhoi("DT2","Xe nào được quyền đi trước trong trường hợp này?","Mô tô.","Xe cứu thương.","","","","","img_9");
+        AddCauhoi("DT2","Xe tải kéo mô tô ba bánh như hình này có đúng quy tắc giao thông không?","Đúng.","Không đúng.","","","","Không đúng.","img_10");
     }
     private void AddCauHoiDeThi3()
     {
         AddCauhoi("DT3","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì?","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","s","Phần đường xe chạy.","");
         AddCauhoi("DT3","“Làn đường” là gì?","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, sử dụng cho xe chạy.","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","Là đường cho xe ô tô chạy, dừng, đỗ an toàn.","","","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","");
         AddCauhoi("DT3","Trong các khái niệm dưới đây, “dải phân cách” được hiểu như thế nào là đúng?","Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép.","Là bộ phận của đường để phân tách phần đường xe chạy và hành lang an toàn giao thông.","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","","","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","");
+        AddCauhoi("DT3","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","","Phần đường xe chạy.","");
         AddCauhoi("DT3","“Dải phân cách” trên đường bộ gồm những loại nào?","Dải phân cách gồm loại cố định và loại di động.","Dải phân cách gồm tường chống ồn, hộ lan cứng và hộ lan mềm.","Dải phân cách gồm giá long môn và biển báo hiệu đường bộ.","","","Dải phân cách gồm loại cố định và loại di động.","");
         AddCauhoi("DT3","Biển báo hiệu có dạng hình tròn, viền đỏ, nền trắng, trên nền có hình vẽ hoặc chữ số, chữ viết màu đen là loại biển gì dưới đây?","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh.","Biển báo chỉ dẫn.","","Biển báo cấm.","bien_1");
+        AddCauhoi("DT3","Biển báo hiệu hình tròn có nền xanh lam có hình vẽ màu trắng là loại biển gì dưới đây","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh phải thi hành.","Biển báo chỉ dẫn.","","Biển báo hiệu lệnh phải thi hành.","img");
+        AddCauhoi("DT3","Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
         AddCauhoi("DT3","Người lái xe được hiểu như thế nào trong các khái niệm dưới đây?","Là người điều khiển xe cơ giới.","Là người điều khiển xe thô sơ.","Là người điều khiển xe có súc vật kéo.","","","Là người điều khiển xe cơ giới.","");
+        AddCauhoi("DT3","Biển nào dưới đây các phương tiện không được phép đi vào?","Biển 1.","Biển 2.","Biển 1 và 2.","","","Biển 1 và 2.","img_2");
         AddCauhoi("DT3","Đường mà trên đó phương tiện tham gia giao thông được các phương tiện giao thông đến từ các hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên là loại đường gì?","Đường không ưu tiên","Đường tỉnh lộ.","Đường quốc lộ.","Đường ưu tiên.","","Đường ưu tiên.","");
         AddCauhoi("DT3","“Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
+        AddCauhoi("DT3","Biển nào cấm xe rẽ trái?","Biển 1.","Biển 2.","Cả hai biển.","","","Biển 1.","img_1");
+        AddCauhoi("DT3","Biển nào xe mô tô hai bánh không được đi vào?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_3");
+        AddCauhoi("DT3","Biển nào báo hiệu nguy hiểm giao nhau với đường sắt?","Biển 1 và 2.","Biển 1 và 3.","Biển 2 và 3.","Cả ba biển.","","Biển 1 và 3.","img_4");
+        AddCauhoi("DT3","Biển nào báo hiệu “Đường giao nhau” của các tuyến đường cùng cấp?","Biển 1.","Biển 2.","Biển 3.","","","Biển 1.","img_5");
+        AddCauhoi("DT3","Biển nào chỉ dẫn nơi bắt đầu đoạn đường dành cho người đi bộ?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_6");
+        AddCauhoi("DT3","Biển nào dưới đây báo hiệu hết cấm vượt?","Biển 1.","Biển 2.","Biển 3.","Biển 2 và 3.","","Biển 2 và 3.","img_7");
+        AddCauhoi("DT3","Vạch kẻ đường nào dưới đây là vạch phân chia hai chiều xe chạy (vạch tim đường), xe không được lấn làn, không được đè lên vạch?","Vạch 1.","Vạch 2.","Vạch 3.","Cả 3 vạch.","","Vạch 2.","img_8");
+        AddCauhoi("DT3","Xe nào được quyền đi trước trong trường hợp này?","Mô tô.","Xe cứu thương.","","","","","img_9");
+        AddCauhoi("DT3","Xe tải kéo mô tô ba bánh như hình này có đúng quy tắc giao thông không?","Đúng.","Không đúng.","","","","Không đúng.","img_10");
     }
     private void AddCauHoiDeThi4()
     {
         AddCauhoi("DT4","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì?","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","s","Phần đường xe chạy.","");
         AddCauhoi("DT4","“Làn đường” là gì?","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, sử dụng cho xe chạy.","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","Là đường cho xe ô tô chạy, dừng, đỗ an toàn.","","","Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn.","");
         AddCauhoi("DT4","Trong các khái niệm dưới đây, “dải phân cách” được hiểu như thế nào là đúng?","Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép.","Là bộ phận của đường để phân tách phần đường xe chạy và hành lang an toàn giao thông.","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","","","Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.","");
+        AddCauhoi("DT4","Phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại là gì","Phần mặt đường và lề đường.","Phần đường xe chạy.","Phần đường xe cơ giới.","","","Phần đường xe chạy.","");
         AddCauhoi("DT4","“Dải phân cách” trên đường bộ gồm những loại nào?","Dải phân cách gồm loại cố định và loại di động.","Dải phân cách gồm tường chống ồn, hộ lan cứng và hộ lan mềm.","Dải phân cách gồm giá long môn và biển báo hiệu đường bộ.","","","Dải phân cách gồm loại cố định và loại di động.","");
         AddCauhoi("DT4","Biển báo hiệu có dạng hình tròn, viền đỏ, nền trắng, trên nền có hình vẽ hoặc chữ số, chữ viết màu đen là loại biển gì dưới đây?","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh.","Biển báo chỉ dẫn.","","Biển báo cấm.","bien_1");
+        AddCauhoi("DT4","Biển báo hiệu hình tròn có nền xanh lam có hình vẽ màu trắng là loại biển gì dưới đây","Biển báo nguy hiểm.","Biển báo cấm.","Biển báo hiệu lệnh phải thi hành.","Biển báo chỉ dẫn.","","Biển báo hiệu lệnh phải thi hành.","img");
+        AddCauhoi("DT4","Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
         AddCauhoi("DT4","Người lái xe được hiểu như thế nào trong các khái niệm dưới đây?","Là người điều khiển xe cơ giới.","Là người điều khiển xe thô sơ.","Là người điều khiển xe có súc vật kéo.","","","Là người điều khiển xe cơ giới.","");
+        AddCauhoi("DT4","Biển nào dưới đây các phương tiện không được phép đi vào?","Biển 1.","Biển 2.","Biển 1 và 2.","","","Biển 1 và 2.","img_2");
         AddCauhoi("DT4","Đường mà trên đó phương tiện tham gia giao thông được các phương tiện giao thông đến từ các hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên là loại đường gì?","Đường không ưu tiên","Đường tỉnh lộ.","Đường quốc lộ.","Đường ưu tiên.","","Đường ưu tiên.","");
         AddCauhoi("DT4","“Phương tiện tham gia giao thông đường bộ” gồm những loại nào?","Phương tiện giao thông cơ giới đường bộ.","Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.","Cả ý 1 và ý 2.","","","Cả ý 1 và ý 2.","");
+        AddCauhoi("DT4","Biển nào cấm xe rẽ trái?","Biển 1.","Biển 2.","Cả hai biển.","","","Biển 1.","img_1");
+        AddCauhoi("DT4","Biển nào xe mô tô hai bánh không được đi vào?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_3");
+        AddCauhoi("DT4","Biển nào báo hiệu nguy hiểm giao nhau với đường sắt?","Biển 1 và 2.","Biển 1 và 3.","Biển 2 và 3.","Cả ba biển.","","Biển 1 và 3.","img_4");
+        AddCauhoi("DT4","Biển nào báo hiệu “Đường giao nhau” của các tuyến đường cùng cấp?","Biển 1.","Biển 2.","Biển 3.","","","Biển 1.","img_5");
+        AddCauhoi("DT4","Biển nào chỉ dẫn nơi bắt đầu đoạn đường dành cho người đi bộ?","Biển 1.","Biển 2.","Biển 3.","","","Biển 2.","img_6");
+        AddCauhoi("DT4","Biển nào dưới đây báo hiệu hết cấm vượt?","Biển 1.","Biển 2.","Biển 3.","Biển 2 và 3.","","Biển 2 và 3.","img_7");
+        AddCauhoi("DT4","Vạch kẻ đường nào dưới đây là vạch phân chia hai chiều xe chạy (vạch tim đường), xe không được lấn làn, không được đè lên vạch?","Vạch 1.","Vạch 2.","Vạch 3.","Cả 3 vạch.","","Vạch 2.","img_8");
+        AddCauhoi("DT4","Xe nào được quyền đi trước trong trường hợp này?","Mô tô.","Xe cứu thương.","","","","","img_9");
+        AddCauhoi("DT4","Xe tải kéo mô tô ba bánh như hình này có đúng quy tắc giao thông không?","Đúng.","Không đúng.","","","","Không đúng.","img_10");
     }
     public List<Question> getAllQuestionByMaDeThi(String MaDeThi) {
         List<Question> questionList = new ArrayList<>();

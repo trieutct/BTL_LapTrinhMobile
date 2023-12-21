@@ -66,7 +66,15 @@ public class TrangThiActivity extends AppCompatActivity {
         NoiDungCauHoi.setText(questionList.get(0).getNoiDungCauHoi());
         option1.setText(questionList.get(0).getOption1());
         option2.setText(questionList.get(0).getOption2());
-        option3.setText(questionList.get(0).getOption3());
+        if(questionList.get(3).getOption3().isEmpty())
+        {
+            option3.setVisibility(View.GONE);
+        }
+        else
+        {
+            option3.setVisibility(View.VISIBLE);
+            option3.setText(questionList.get(0).getOption3());
+        }
         if(questionList.get(0).getOption4().isEmpty())
         {
             option4.setVisibility(View.GONE);
@@ -194,7 +202,15 @@ public class TrangThiActivity extends AppCompatActivity {
             NoiDungCauHoi.setText(questionList.get(CauHienTai).getNoiDungCauHoi());
             option1.setText(questionList.get(CauHienTai).getOption1());
             option2.setText(questionList.get(CauHienTai).getOption2());
-            option3.setText(questionList.get(CauHienTai).getOption3());
+            if(questionList.get(CauHienTai).getOption3().isEmpty())
+            {
+                option3.setVisibility(View.GONE);
+            }
+            else
+            {
+                option3.setVisibility(View.VISIBLE);
+                option3.setText(questionList.get(CauHienTai).getOption3());
+            }
             if(questionList.get(CauHienTai).getOption4().isEmpty())
             {
                 option4.setVisibility(View.GONE);
