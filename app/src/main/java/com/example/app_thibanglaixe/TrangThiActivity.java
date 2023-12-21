@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.app_thibanglaixe.Model.Question;
 import com.example.app_thibanglaixe.SQLite.SQLiteHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
@@ -217,6 +218,19 @@ public class TrangThiActivity extends AppCompatActivity {
         else
         {
             Intent intent=new Intent(TrangThiActivity.this,KetQuaActivity.class);
+            intent.putExtra("DapAnDung",getCorrectAnswers()+"");
+            intent.putExtra("DapAnSai",getInCorrectAnswers()+"");
+            intent.putExtra("MaDeThi",MaDeThi);
+            intent.putExtra("TenDeThi",TenDeThi);
+
+//            //Log.d("aaa", getCorrectAnswers()+"" );
+//           for (Question question : questionList) {
+//               if(question.getUserSelectedAnswer()!=question.getAnswer())
+//               {
+//
+//               }
+//            }
+            //intent.putIntegerArrayListExtra("myList", myList);
             startActivity(intent);
         }
     }
@@ -310,6 +324,34 @@ public class TrangThiActivity extends AppCompatActivity {
             quiziTimer.purge();
             quiziTimer = null;
         }
+    }
+    private int getCorrectAnswers()
+    {
+        int correctAnswers=0;
+        for(int i=0;i<questionList.size();i++)
+        {
+            final String getUserSelectedUser=questionList.get(i).getUserSelectedAnswer();
+            final String getAnswer=questionList.get(i).getAnswer();
+            if(getUserSelectedUser.equals(getAnswer))
+            {
+                correctAnswers++;
+            }
+        }
+        return correctAnswers;
+    }
+    private int getInCorrectAnswers()
+    {
+        int IncorrectAnswers=0;
+        for(int i=0;i<questionList.size();i++)
+        {
+            final String getUserSelectedUser=questionList.get(i).getUserSelectedAnswer();
+            final String getAnswer=questionList.get(i).getAnswer();
+            if(!getUserSelectedUser.equals(getAnswer))
+            {
+                IncorrectAnswers++;
+            }
+        }
+        return IncorrectAnswers;
     }
     @Override
     public void onBackPressed() {
