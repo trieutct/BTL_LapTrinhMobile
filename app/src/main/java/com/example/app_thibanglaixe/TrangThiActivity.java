@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,13 +28,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 public class TrangThiActivity extends AppCompatActivity {
     private int Phut = 19;
-    private int Giay = 60;
+    private int Giay = 59;
     private Timer quiziTimer;
     //private Handler handler;
     private TextView txtThoiGianThi;
     private String MaDeThi,TenDeThi;
     private TextView tvDeThi;
     private TextView Questions;
+    private  TextView txt_ChamDiem;
     private AppCompatButton option1,option2,option3,option4;
     private ImageView Image;
     private AppCompatButton nextBtn;
@@ -43,6 +45,7 @@ public class TrangThiActivity extends AppCompatActivity {
     private String UserSelected="";
 
     private List<Question> CauSai;
+    private TextView btn_ThuLai;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +99,26 @@ public class TrangThiActivity extends AppCompatActivity {
             int Idimage=getResourceId(questionList.get(0).getLinkAnh(),"drawable", getPackageName());
             Image.setImageResource(Idimage);
         }
+        txt_ChamDiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(TrangThiActivity.this,KetQuaActivity.class);
+                intent.putExtra("DapAnDung",getCorrectAnswers()+"");
+                intent.putExtra("DapAnSai",getInCorrectAnswers()+"");
+                intent.putExtra("MaDeThi",MaDeThi);
+                intent.putExtra("TenDeThi",TenDeThi);
+                ArrayList<Question> questionErrors = new ArrayList<>();
+//            //Log.d("aaa", getCorrectAnswers()+"" );
+                for (Question question : questionList) {
+                    if(!question.getUserSelectedAnswer().equals(question.getAnswer()))
+                    {
+                        questionErrors.add(question);
+                    }
+                }
+                intent.putExtra("questionErrors", questionErrors);
+                startActivity(intent);
+            }
+        });
         option1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -289,6 +312,7 @@ public class TrangThiActivity extends AppCompatActivity {
 
         Questions=findViewById(R.id.questions);
         Image=findViewById(R.id.image);
+        txt_ChamDiem=findViewById(R.id.txtChamDiem);
     }
     private void settimer() {
         quiziTimer = new Timer();
@@ -303,10 +327,18 @@ public class TrangThiActivity extends AppCompatActivity {
                             View alertCustomDialog= LayoutInflater.from(TrangThiActivity.this).inflate(R.layout.waring_het_thoigian,null);
                             AlertDialog.Builder alertDialog=new AlertDialog.Builder(TrangThiActivity.this);
                             alertDialog.setView(alertCustomDialog);
+                            btn_ThuLai=alertCustomDialog.findViewById(R.id.btn_ThuLai);
                             final AlertDialog dialog=alertDialog.create();
                             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                             dialog.setCanceledOnTouchOutside(false);
                             dialog.show();
+                            btn_ThuLai.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent=new Intent(TrangThiActivity.this,MainTrangChuActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
                         }
                     });
                 }

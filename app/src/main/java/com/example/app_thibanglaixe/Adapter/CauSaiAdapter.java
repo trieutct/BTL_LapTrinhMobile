@@ -33,7 +33,7 @@ public class CauSaiAdapter extends RecyclerView.Adapter<CauSaiAdapter.ExamViewHo
     @Override
     public void onBindViewHolder(@NonNull CauSaiAdapter.ExamViewHolder holder, int position) {
         Question exam = examList.get(position);
-        holder.CauHoi.setText(exam.getNoiDungCauHoi());
+        holder.CauHoi.setText(position+". "+exam.getNoiDungCauHoi());
         holder.option1.setText(exam.getOption1());
         holder.option2.setText(exam.getOption2());
         holder.option3.setText(exam.getOption3());

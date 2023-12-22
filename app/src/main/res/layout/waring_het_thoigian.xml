@@ -37,6 +37,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/timer_out_btn_shape">
             <TextView
+                android:id="@+id/btn_ThuLai"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Thử lại"

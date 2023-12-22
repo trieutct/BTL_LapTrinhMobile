@@ -66,4 +66,11 @@ public class KetQuaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(KetQuaActivity.this,MainTrangChuActivity.class);
+                startActivity(intent);
+            }
+        });
 }}
