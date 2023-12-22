@@ -41,6 +41,8 @@ public class TrangThiActivity extends AppCompatActivity {
     private List<Question> questionList;
     private int CauHienTai=0;
     private String UserSelected="";
+
+    private List<Question> CauSai;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -238,15 +240,15 @@ public class TrangThiActivity extends AppCompatActivity {
             intent.putExtra("DapAnSai",getInCorrectAnswers()+"");
             intent.putExtra("MaDeThi",MaDeThi);
             intent.putExtra("TenDeThi",TenDeThi);
-
+            ArrayList<Question> questionErrors = new ArrayList<>();
 //            //Log.d("aaa", getCorrectAnswers()+"" );
-//           for (Question question : questionList) {
-//               if(question.getUserSelectedAnswer()!=question.getAnswer())
-//               {
-//
-//               }
-//            }
-            //intent.putIntegerArrayListExtra("myList", myList);
+           for (Question question : questionList) {
+               if(!question.getUserSelectedAnswer().equals(question.getAnswer()))
+               {
+                   questionErrors.add(question);
+               }
+            }
+            intent.putExtra("questionErrors", questionErrors);
             startActivity(intent);
         }
     }

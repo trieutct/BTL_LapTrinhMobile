@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.app_thibanglaixe.Model.Question;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,6 +22,7 @@ public class KetQuaActivity extends AppCompatActivity {
     AppCompatButton btn_exit;
     AppCompatButton btn_xemcausai;
     private  String MaDeThi,TenDeThi;
+    ArrayList<Question> questionErrors = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +39,14 @@ public class KetQuaActivity extends AppCompatActivity {
 
         DapAnDung.setText(getIntent().getStringExtra("DapAnDung")+"");
         DapAnSai.setText(getIntent().getStringExtra("DapAnSai")+"");
-//        Intent intent = getIntent();
-//        Bundle bundle = intent.getExtras();
-//        if (bundle != null) {
-//            ArrayList<String> receivedList = bundle.getStringArrayList("myList");
-//            for (String item : receivedList) {
-//                Log.d("MyActivity", "Item: " + item);
+        Intent intent = getIntent();
+        if (intent != null) {
+             questionErrors = (ArrayList<Question>) intent.getSerializableExtra("questionErrors");
+//             int i=0;
+//            for (Question question : questionErrors) {
+//                Log.d(++i+"", question.getNoiDungCauHoi());
 //            }
-//        }
+        }
         MaDeThi=getIntent().getStringExtra("MaDeThi");
         TenDeThi=getIntent().getStringExtra("TenDeThi");
         btn_choilai.setOnClickListener(new View.OnClickListener() {
@@ -55,5 +58,12 @@ public class KetQuaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-}
+        btn_xemcausai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(KetQuaActivity.this,TrangXemCauSaiActivity.class);
+                intent.putExtra("questionErrors", questionErrors);
+                startActivity(intent);
+            }
+        });
+}}

@@ -1,6 +1,8 @@
 package com.example.app_thibanglaixe.Model;
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable {
     private String MaDeThi;
     private String NoiDungCauHoi;
     private String Option1,Option2,Option3,Option4;

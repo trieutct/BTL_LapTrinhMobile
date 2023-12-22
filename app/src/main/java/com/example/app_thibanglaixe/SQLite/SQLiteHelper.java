@@ -195,6 +195,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
     public List<Question> getAllQuestionByMaDeThi(String MaDeThi) {
         List<Question> questionList = new ArrayList<>();
+
+
         SQLiteDatabase db = this.getReadableDatabase();
 
         // Thay đổi Query để lấy câu hỏi theo mã đề thi
